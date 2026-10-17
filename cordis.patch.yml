@@ -1,0 +1,14 @@
+# dsh-terminal-probe bundle patch
+#
+# 本文件是 dsh.bundle.patch 装配层：当 profile 的 dsh.profile.bundles 里出现
+# dsh-terminal-probe（官方 dsh plugin add 会自动写入，或手工加一行），
+# 实例启动时就把下面这一行插进 loader 条目表，挂载 host 侧 lib/index.js。
+#
+# client 侧 lib/client.js 由 dsh.client.platform=web 声明，渲染端模块图自动装载。
+#
+# 手工装配（不经官方 CLI）时，也可以把这行照抄进 profile 的 cordis.patch.yml；
+# 两种渠道同时存在会 duplicate loader entry id，二选一。
+- insert:
+    - id: terminal-probe
+      name: 'dsh-terminal-probe'
+      config: {}

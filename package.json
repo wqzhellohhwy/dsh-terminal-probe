@@ -1,0 +1,52 @@
+{
+  "name": "dsh-terminal-probe",
+  "version": "0.1.0",
+  "description": "Terminal color probe: reads the bottom-panel xterm's actual rendered background/foreground colors (canvas pixels + token recompute) across skin/theme switches, and reports them to the host via /api/terminal-probe/*. Diagnostics tool (hidden, no UI).",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "cordis",
+    "terminal",
+    "xterm",
+    "color-probe",
+    "diagnostics",
+    "skin",
+    "theme"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "cordis": ">=4.0.0-rc <5"
+  }
+}
