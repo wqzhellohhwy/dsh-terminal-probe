@@ -2,3 +2,8 @@ node_modules/
 *.log
 .tmp/
 .DS_Store
+# 备份/临时（2026-10-25 补）
+*.TMP
+*.bak
+*.bak-*
+*.BROKEN*
